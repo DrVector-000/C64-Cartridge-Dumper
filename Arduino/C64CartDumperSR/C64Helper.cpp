@@ -41,10 +41,27 @@ byte readByte(unsigned int address) {
   addressWrite(address);
 
   // Lettura pins D2/D9 (Bus Dati)
+  /*
   byte bval = 0;
   for (int y = 0; y < 8; y++) {
     bitWrite(bval, y, digitalRead(y + 2));
   }
+  */
+  byte pd = PIND;
+  byte pb = PINB;
+
+  //Serial.println("PIND=" + (String)pd);
+  //Serial.println("PINB=" + (String)pb);
+
+  byte bval = 0;
+  bitWrite(bval, 0, bitRead(pd, 2));
+  bitWrite(bval, 1, bitRead(pd, 3));
+  bitWrite(bval, 2, bitRead(pd, 4));
+  bitWrite(bval, 3, bitRead(pd, 5));
+  bitWrite(bval, 4, bitRead(pd, 6));
+  bitWrite(bval, 5, bitRead(pd, 7));
+  bitWrite(bval, 6, bitRead(pb, 0));
+  bitWrite(bval, 7, bitRead(pb, 1));
 
   // Serial.println("readByte=" + (String)bval);
   return bval;
@@ -60,11 +77,11 @@ void dumpROMBank(int bank) {
     unsigned int addr = 0;
     
     // Seleziona il banco
-    if (bank = 0) {
+    if (bank == 0) {
       enableROML(true);
       enableROMH(false);
     }
-    else if (bank = 1) {
+    else if (bank == 1) {
       enableROMH(true);
       enableROML(false);
     }
@@ -77,7 +94,7 @@ void dumpROMBank(int bank) {
       buffer[index] = bval;
       index ++;
       //Serial.println(bval, DEC);
-      
+
       if (index == 256) {
         Serial.write(buffer, 256);
         index = 0;

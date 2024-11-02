@@ -36,4 +36,4 @@ const int C64_GAME_PIN = A4;
 // Pin /IO1 del connettore C64
 const int C64_IO1_PIN = A5;
 // Pin /ROMH del connettore C64
-const int C64_ROMH_PIN = A6;
+const int C64_ROMH_PIN = 13;

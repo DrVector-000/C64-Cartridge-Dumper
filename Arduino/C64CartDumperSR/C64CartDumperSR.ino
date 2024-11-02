@@ -26,6 +26,9 @@ void setup() {
   // Inizializza Output Pins connettore C64
   pinMode(C64_ROML_PIN, OUTPUT);
   pinMode(C64_ROMH_PIN, OUTPUT); 
+  // Imposta ROML attiva
+  enableROML(true);
+  enableROMH(false);
 
   // Inizializza Input Pins connettore C64
   pinMode(C64_DMA_PIN, INPUT);
@@ -42,7 +45,7 @@ void setup() {
   // Azzera lo shift register
   addressWrite(0x0000);
 
-  // Serial.begin(115200);
+  //Serial.begin(115200);
   Serial.begin(500000);
   Serial.println("COMMODORE 64 CARTRIDGE DUMPER V.1.00");
   Serial.println("");
@@ -128,11 +131,11 @@ void ParseComands(String s) {
     if (comand == "ROMH") {
       GetComandParams(s, params);
       if (params[0] == "0") {
-        digitalWrite(C64_ROMH_PIN, false);
+        digitalWrite(C64_ROMH_PIN, LOW);
         Serial.println("+ROMH=0");
       }
       else if (params[0] == "1") {
-        digitalWrite(C64_ROMH_PIN, true);
+        digitalWrite(C64_ROMH_PIN, HIGH);
         Serial.println("+ROMH=1");
       }
     }
@@ -142,11 +145,11 @@ void ParseComands(String s) {
     if (comand == "ROML") {
       GetComandParams(s, params);
       if (params[0] == "0") {
-        digitalWrite(C64_ROML_PIN, false);
+        digitalWrite(C64_ROML_PIN, LOW);
         Serial.println("+ROML=0");
       }
       else if (params[0] == "1") {
-        digitalWrite(C64_ROML_PIN, true);
+        digitalWrite(C64_ROML_PIN, HIGH);
         Serial.println("+ROML=1");
       }
     }
