@@ -6,7 +6,14 @@ E' composto da Hardware e software studiati per il backup di cartucce di gioco e
 
 La componente Hardware utilizza la scheda Arduino Nano (ATMega328P) come controllore e degli Shift Register (74HC595) per estenderne gli I/O; mentre la parte software è formata dal firmware caricato sull'Arduino (aggiornabile tramite USB) ed un client Windows in C# per .Net Framework. Inoltre è stato creato un software per Windows per l'aggiornamento del firmware.
 
+<p align="center" width="100%">
+	<img src="https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6074.jpg" alt="Dumper" width="400"/>
+	<img src="https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6076.jpg" alt="Cartridge" width="400"/>
+</p>
+
+<!---
 ![alt text](https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6074.jpg?raw=true)
+-->
 
 ## Funzionalità implementate e previste
 - [x] Lettura e salvataggio su file delle cartucce standard 8k e 16k.
