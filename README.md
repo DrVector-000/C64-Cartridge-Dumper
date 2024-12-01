@@ -8,7 +8,7 @@ La componente Hardware utilizza la scheda Arduino Nano (ATMega328P) come control
 
 <p align="center" width="100%">
 	<img src="https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6074.jpg" alt="Dumper" width="400"/>
-	<img src="https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6076.jpg" alt="Cartridge" width="400"/>
+	<img src="https://github.com/DrVector-000/C64-Cartridge-Dumper/blob/main/Images/IMG_6076.jpg" alt="Cartridge" width="225"/>
 </p>
 
 <!---
