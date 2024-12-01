@@ -1,0 +1,7 @@
+# Visual Studio cache/options directory
+.vs/
+
+# Project directories
+C64CartridgeDumper/bin/
+C64CartridgeDumper/obj/
+
